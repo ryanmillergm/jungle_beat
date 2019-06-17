@@ -6,6 +6,10 @@ class Node
     @data = data
     @next_node = next_node
   end
+
+  def tail?
+    @next_node.nil?
+  end
 end
 
 # require "./lib/node"

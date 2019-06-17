@@ -10,7 +10,7 @@ class LinkedList
   end
 
   def count
-    if head.nil?
+    if @head.nil?
       0
     else
       1

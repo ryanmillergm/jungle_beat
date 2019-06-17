@@ -34,22 +34,20 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_list_to_string
+    result = @list.append("doop")
+
     assert_equal "doop", @list.to_string
+  end
+
+  def test_can_append_multiple_nodes
+    @list.append("doop")
+    @list.append("deep")
+
+    result = @list.head.next_node.data
+    assert_equal "deep", result
   end
 end
 
-# Iteration 1 - Append, To String, and Count (Single Node / Element)
-# Great! We have nodes. In this iteration we'll create the LinkedList class and start filling in the basic functionality needed to append our first node.
-#
-# We'll be adding the following methods:
-#
-# append - adds a new piece of data (data can really be anything) to the list
-# count - tells us how many things are in the list
-# to_string - generates a string of all the elements in the list, separated by spaces
-# But for now, focus on building these functions so they work for just the first element of data appended to the list (we'll handle multiple elements in the next iteration).
-#
-# Expected behavior:
-#
 # > require "./lib/linked_list"
 # > list = LinkedList.new
 # => <LinkedList head=nil #45678904567>
@@ -59,9 +57,15 @@ end
 # => "doop"
 # > list
 # => <LinkedList head=<Node data="doop" next_node=nil #5678904567890> #45678904567>
+# > list.head
+# => <Node data="doop" next_node=nil #5678904567890>
 # > list.head.next_node
 # => nil
+# > list.append("deep")
+# => "deep"
+# > list.head.next_node
+# => <Node data="deep" next_node=nil #5678904567890>
 # > list.count
-# => 1
+# => 2
 # > list.to_string
-# => "doop"
+# => "doop deep"
