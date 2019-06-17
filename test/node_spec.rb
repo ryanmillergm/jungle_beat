@@ -14,6 +14,10 @@ class NodeTest < Minitest::Test
     assert_equal "plop", @node.data
   end
 
+  def test_next_node_nil
+    assert_equal nil, @node.next_node
+  end
+
 end
 
 # require "./lib/node"
