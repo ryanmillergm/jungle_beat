@@ -1,6 +1,6 @@
 require './test/test_helper.rb'
 
-class NodeTest < Minitest::Test
+class NodeTest < MiniTest::Test
 
   def setup
     @node = Node.new("plop")
