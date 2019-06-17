@@ -14,8 +14,19 @@ class LinkedListTest < MiniTest::Test
     assert_nil @list.head
   end
 
-  def test_list_can_append
-    assert_equal "doop", @list.append("doop")
+  def test_list_can_append_new_node
+    result = @list.append("doop")
+
+    assert_equal "doop", result.data
+    assert_equal result, @list.head
+  end
+
+  # def test_next_node_nil
+  #   assert_nil @list.head.next_node
+  # end
+
+  def test_count_how_many_things_are_in_list
+
   end
 end
 
