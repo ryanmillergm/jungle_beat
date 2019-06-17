@@ -6,12 +6,7 @@ class LinkedList
   end
 
   def append(data)
-    node = Node.new(data)
-    if empty?
-      self.head = node
-    else
-      last_node(head).next_node = node
-    end
+    empty? ? set_head(data) : set_tail(data)
   end
 
   def count
@@ -33,6 +28,20 @@ class LinkedList
 
   def empty?
     @head.nil?
+  end
+
+  def new_node(data)
+    Node.new(data)
+  end
+
+  private
+
+  def set_head(data)
+    self.head = new_node(data)
+  end
+
+  def set_tail(data)
+    last_node(head).next_node = new_node(data)
   end
 
 end

@@ -42,6 +42,7 @@ class LinkedListTest < MiniTest::Test
   def test_can_append_multiple_nodes
     @list.append("doop")
     @list.append("deep")
+    @list.append("bop")
 
     result = @list.head.next_node.data
     assert_equal "deep", result
@@ -64,6 +65,24 @@ class LinkedListTest < MiniTest::Test
     @list.append('deep')
 
     assert_equal false, @list.empty?
+  end
+
+  def test_new_node_returns_a_new_node
+    result = @list.new_node('doop')
+
+    assert_instance_of Node, result
+    assert_equal 'doop', result.data
+  end
+
+  def test_append_three_nodes
+    subject = LinkedList.new
+    subject.append('doop')
+    subject.append('deep')
+    subject.append('bop')
+
+    result = @list.head.next_node.next_node.surname
+
+    assert_equal 'bop', result
   end
 end
 
