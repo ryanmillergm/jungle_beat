@@ -10,11 +10,8 @@ class LinkedList
   end
 
   def count
-    if @head.nil?
-      0
-    else
-      1
-    end
+    return 0 if empty?
+    count_node(head, 1)
   end
 
   def to_string
@@ -42,6 +39,11 @@ class LinkedList
 
   def set_tail(data)
     last_node(head).next_node = new_node(data)
+  end
+
+  def count_node(node, counter)
+    return counter if node.tail?
+    count_node(node.next_node, counter += 1)
   end
 
 end

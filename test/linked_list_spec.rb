@@ -75,14 +75,24 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_append_three_nodes
-    subject = LinkedList.new
-    subject.append('doop')
-    subject.append('deep')
-    subject.append('bop')
+    @list = LinkedList.new
+    @list.append('doop')
+    @list.append('deep')
+    @list.append('bop')
 
-    result = @list.head.next_node.next_node.surname
+    result = @list.head.next_node.next_node.data
 
     assert_equal 'bop', result
+  end
+
+  def test_count_three_nodes
+    @list = LinkedList.new
+    @list.append('Rhodes')
+    @list.append('Hardy')
+    @list.append('Smith')
+
+    result = @list.count
+    assert_equal 3, result
   end
 end
 
