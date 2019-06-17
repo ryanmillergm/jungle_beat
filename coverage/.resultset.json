@@ -2,9 +2,24 @@
   "Unit Tests": {
     "coverage": {
       "/Users/ryan/turing/3module/pre_work/jungle_beat/lib/node.rb": [
-
+        1,
+        1,
+        1,
+        null,
+        1,
+        3,
+        3,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1560796506
+    "timestamp": 1560797996
   }
 }
