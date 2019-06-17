@@ -5,6 +5,10 @@ class LinkedListTest < MiniTest::Test
   def setup
     @list = LinkedList.new
   end
+
+  def test_linked_list_exists
+    assert_instance_of LinkedList, @list
+  end
 end
 
 # Iteration 1 - Append, To String, and Count (Single Node / Element)
