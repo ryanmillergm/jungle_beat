@@ -5,8 +5,13 @@ class LinkedList
     @head = nil
   end
 
-  def append(note)
-    self.head = Node.new(note)
+  def append(data)
+    node = Node.new(data)
+    if empty?
+      self.head = node
+    else
+      last_node(head).next_node = node
+    end
   end
 
   def count
@@ -19,6 +24,15 @@ class LinkedList
 
   def to_string
     @head.data
+  end
+
+  def last_node(note)
+    return note if note.tail?
+    last_node(note.next_node)
+  end
+
+  def empty?
+    @head.nil?
   end
 
 end

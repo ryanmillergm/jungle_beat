@@ -46,6 +46,25 @@ class LinkedListTest < MiniTest::Test
     result = @list.head.next_node.data
     assert_equal "deep", result
   end
+
+  def test_last_node_returns_the_tail
+    @list.append('deep')
+
+    result = @list.last_node(@list.head)
+
+    assert_instance_of Node, result
+    assert_equal 'deep', result.data
+  end
+
+  def test_empty_returns_true_when_head_is_nil
+    assert_equal true, @list.empty?
+  end
+
+  def test_empty_returns_false_when_head_is_not_nil
+    @list.append('deep')
+
+    assert_equal false, @list.empty?
+  end
 end
 
 # > require "./lib/linked_list"
