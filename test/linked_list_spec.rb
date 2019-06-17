@@ -21,12 +21,20 @@ class LinkedListTest < MiniTest::Test
     assert_equal result, @list.head
   end
 
-  # def test_next_node_nil
-  #   assert_nil @list.head.next_node
-  # end
+  def test_next_node_nil
+    result = @list.append("doop")
+
+    assert_nil @list.head.next_node
+  end
 
   def test_count_how_many_things_are_in_list
+    result = @list.append("doop")
 
+    assert_equal 1, @list.count
+  end
+
+  def test_list_to_string
+    assert_equal "doop", @list.to_string
   end
 end
 
