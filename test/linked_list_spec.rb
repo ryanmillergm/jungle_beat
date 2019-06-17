@@ -9,6 +9,14 @@ class LinkedListTest < MiniTest::Test
   def test_linked_list_exists
     assert_instance_of LinkedList, @list
   end
+
+  def test_linked_list_head_default_is_nil
+    assert_nil @list.head
+  end
+
+  def test_list_can_append
+    assert_equal "doop", @list.append("doop")
+  end
 end
 
 # Iteration 1 - Append, To String, and Count (Single Node / Element)
