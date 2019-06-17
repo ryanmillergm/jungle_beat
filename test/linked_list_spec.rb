@@ -87,12 +87,24 @@ class LinkedListTest < MiniTest::Test
 
   def test_count_three_nodes
     @list = LinkedList.new
-    @list.append('Rhodes')
-    @list.append('Hardy')
-    @list.append('Smith')
+    @list.append('doop')
+    @list.append('deep')
+    @list.append('bop')
 
     result = @list.count
     assert_equal 3, result
+  end
+
+  def test_to_string_works_with_three_nodes
+    @list = LinkedList.new
+    @list.append('doop')
+    @list.append('deep')
+    @list.append('bop')
+    expected = 'doop, deep, bop'
+
+    result = @list.to_string
+
+    assert_equal expected, result
   end
 end
 

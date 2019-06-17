@@ -11,11 +11,13 @@ class LinkedList
 
   def count
     return 0 if empty?
-    count_node(head, 1)
+    count_node(@head, 1)
   end
 
   def to_string
-    @head.data
+    return "" if empty?
+    return sentence_starter if @head.tail?
+    stringify_node(@head.next_node, sentence_starter)
   end
 
   def last_node(note)
@@ -44,6 +46,19 @@ class LinkedList
   def count_node(node, counter)
     return counter if node.tail?
     count_node(node.next_node, counter += 1)
+  end
+
+  def concat(sentence, node)
+    "#{sentence}, #{node.data}"
+  end
+
+  def stringify_node(node, sentence)
+    return concat(sentence, node) if node.tail?
+    stringify_node(node.next_node, concat(sentence, node))
+  end
+
+  def sentence_starter
+    "#{head.data}"
   end
 
 end
