@@ -5,20 +5,109 @@ class LinkedListTest < MiniTest::Test
   def setup
     @list = LinkedList.new
   end
+
+  def test_linked_list_exists
+    assert_instance_of LinkedList, @list
+  end
+
+  def test_linked_list_head_default_is_nil
+    assert_nil @list.head
+  end
+
+  def test_list_can_append_new_node
+    result = @list.append("doop")
+
+    assert_equal "doop", result.data
+    assert_equal result, @list.head
+  end
+
+  def test_next_node_nil
+    result = @list.append("doop")
+
+    assert_nil @list.head.next_node
+  end
+
+  def test_count_how_many_things_are_in_list
+    result = @list.append("doop")
+
+    assert_equal 1, @list.count
+  end
+
+  def test_list_to_string
+    result = @list.append("doop")
+
+    assert_equal "doop", @list.to_string
+  end
+
+  def test_can_append_multiple_nodes
+    @list.append("doop")
+    @list.append("deep")
+    @list.append("bop")
+
+    result = @list.head.next_node.data
+    assert_equal "deep", result
+  end
+
+  def test_last_node_returns_the_tail
+    @list.append('deep')
+
+    result = @list.last_node(@list.head)
+
+    assert_instance_of Node, result
+    assert_equal 'deep', result.data
+  end
+
+  def test_empty_returns_true_when_head_is_nil
+    assert_equal true, @list.empty?
+  end
+
+  def test_empty_returns_false_when_head_is_not_nil
+    @list.append('deep')
+
+    assert_equal false, @list.empty?
+  end
+
+  def test_new_node_returns_a_new_node
+    result = @list.new_node('doop')
+
+    assert_instance_of Node, result
+    assert_equal 'doop', result.data
+  end
+
+  def test_append_three_nodes
+    @list = LinkedList.new
+    @list.append('doop')
+    @list.append('deep')
+    @list.append('bop')
+
+    result = @list.head.next_node.next_node.data
+
+    assert_equal 'bop', result
+  end
+
+  def test_count_three_nodes
+    @list = LinkedList.new
+    @list.append('doop')
+    @list.append('deep')
+    @list.append('bop')
+
+    result = @list.count
+    assert_equal 3, result
+  end
+
+  def test_to_string_works_with_three_nodes
+    @list = LinkedList.new
+    @list.append('doop')
+    @list.append('deep')
+    @list.append('bop')
+    expected = 'doop, deep, bop'
+
+    result = @list.to_string
+
+    assert_equal expected, result
+  end
 end
 
-# Iteration 1 - Append, To String, and Count (Single Node / Element)
-# Great! We have nodes. In this iteration we'll create the LinkedList class and start filling in the basic functionality needed to append our first node.
-#
-# We'll be adding the following methods:
-#
-# append - adds a new piece of data (data can really be anything) to the list
-# count - tells us how many things are in the list
-# to_string - generates a string of all the elements in the list, separated by spaces
-# But for now, focus on building these functions so they work for just the first element of data appended to the list (we'll handle multiple elements in the next iteration).
-#
-# Expected behavior:
-#
 # > require "./lib/linked_list"
 # > list = LinkedList.new
 # => <LinkedList head=nil #45678904567>
@@ -28,9 +117,15 @@ end
 # => "doop"
 # > list
 # => <LinkedList head=<Node data="doop" next_node=nil #5678904567890> #45678904567>
+# > list.head
+# => <Node data="doop" next_node=nil #5678904567890>
 # > list.head.next_node
 # => nil
+# > list.append("deep")
+# => "deep"
+# > list.head.next_node
+# => <Node data="deep" next_node=nil #5678904567890>
 # > list.count
-# => 1
+# => 2
 # > list.to_string
-# => "doop"
+# => "doop deep"
