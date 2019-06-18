@@ -10,7 +10,21 @@ class JungleBeatTest < MiniTest::Test
     assert_instance_of JungleBeat, @jb
   end
 
-  
+  def test_jungle_beat_has_list
+    assert_instance_of LinkedList, @jb.list
+  end
+
+  def test_jungle_beat_list_head_nil
+    assert_nil @jb.list.head
+  end
+
+  def test_append_to_jungle_beat
+    result = "deep, doo, ditt"
+
+    @jb.append("deep, doo, ditt")
+
+    assert_equal result, @jb.list.to_string
+  end
 end
 
 # > require "./lib/jungle_beat"
