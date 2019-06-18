@@ -24,7 +24,15 @@ class JungleBeatTest < MiniTest::Test
     @jb.append("deep, doo, ditt")
 
     assert_equal result, @jb.list.to_string
+    assert_equal "deep", @jb.list.head.data
+    assert_equal "doo", @jb.list.head.next_node.data
+
+    @jb.append("woo, hoo, shu")
+
+    assert_equal 6, @jb.count
   end
+
+
 end
 
 # > require "./lib/jungle_beat"

@@ -10,4 +10,8 @@ class JungleBeat
     split_data.each { |data| @list.append(data)}
   end
 
+  def count
+    @list.count
+  end
+
 end
