@@ -75,7 +75,6 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_append_three_nodes
-    @list = LinkedList.new
     @list.append('doop')
     @list.append('deep')
     @list.append('bop')
@@ -86,7 +85,6 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_count_three_nodes
-    @list = LinkedList.new
     @list.append('doop')
     @list.append('deep')
     @list.append('bop')
@@ -96,7 +94,6 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_to_string_works_with_three_nodes
-    @list = LinkedList.new
     @list.append('doop')
     @list.append('deep')
     @list.append('bop')
@@ -106,26 +103,46 @@ class LinkedListTest < MiniTest::Test
 
     assert_equal expected, result
   end
+
+  def test_prepend_appends_to_head
+    expected = 'dop, plop, suu'
+    @list.append('plop')
+    @list.append('suu')
+    @list.prepend('dop')
+
+    result = @list.to_string
+
+    assert_equal expected, result
+  end
+
+  def test_insert
+    expected = "dop, woo, plop, suu"
+    @list.append('plop')
+    @list.append('suu')
+    @list.prepend('dop')
+
+    result = @list.insert(1, 'woo')
+
+    assert_instance_of Node, result
+    assert_equal expected, @list.to_string
+  end
 end
 
 # > require "./lib/linked_list"
 # > list = LinkedList.new
-# => <LinkedList head=nil #45678904567>
-# > list.head
-# => nil
-# > list.append("doop")
-# => "doop"
-# > list
-# => <LinkedList head=<Node data="doop" next_node=nil #5678904567890> #45678904567>
-# > list.head
-# => <Node data="doop" next_node=nil #5678904567890>
-# > list.head.next_node
-# => nil
-# > list.append("deep")
-# => "deep"
-# > list.head.next_node
-# => <Node data="deep" next_node=nil #5678904567890>
-# > list.count
-# => 2
+# > list.append("plop")
+# => "plop"
 # > list.to_string
-# => "doop deep"
+# => "plop"
+# > list.append("suu")
+# => "suu"
+# > list.prepend("dop")
+# => "dop"
+# > list.to_string
+# => "dop plop suu"
+# > list.count
+# => 3
+# > list.insert(1, "woo")
+# => "woo"
+# list.to_string
+# => "dop woo plop suu"
