@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-06-18T11:00:41-06:00">2019-06-18T11:00:41-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-06-18T11:09:00-06:00">2019-06-18T11:09:00-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.34
+         5.23
        </span>
     </span> hits/line)
   </h2>
@@ -57,7 +57,7 @@
         <td>49</td>
         <td>49</td>
         <td>0</td>
-        <td>4.4</td>
+        <td>4.3</td>
       </tr>
       
       <tr>
@@ -67,7 +67,7 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>11.1</td>
+        <td>10.9</td>
       </tr>
       
     </tbody>
@@ -148,8 +148,8 @@
           <code class="ruby">  def append(data)</code>
         </li>
       
-        <li class="covered" data-hits="23" data-linenumber="9">
-          <span class="hits">23</span>
+        <li class="covered" data-hits="22" data-linenumber="9">
+          <span class="hits">22</span>
           
           <code class="ruby">    empty? ? set_head(data) : set_tail(data)</code>
         </li>
@@ -238,14 +238,14 @@
           <code class="ruby">  def last_node(note)</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="24">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="15" data-linenumber="24">
+          <span class="hits">15</span>
           
           <code class="ruby">    return note if note.tail?</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="25">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="4" data-linenumber="25">
+          <span class="hits">4</span>
           
           <code class="ruby">    last_node(note.next_node)</code>
         </li>
@@ -268,8 +268,8 @@
           <code class="ruby">  def empty?</code>
         </li>
       
-        <li class="covered" data-hits="31" data-linenumber="29">
-          <span class="hits">31</span>
+        <li class="covered" data-hits="30" data-linenumber="29">
+          <span class="hits">30</span>
           
           <code class="ruby">    @head.nil?</code>
         </li>
@@ -316,20 +316,20 @@
           <code class="ruby">  def prepend(data)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="37">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="37">
+          <span class="hits">2</span>
           
           <code class="ruby">    node = new_node(data)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="38">
+          <span class="hits">2</span>
           
           <code class="ruby">    node.next_node = @head</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="39">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="39">
+          <span class="hits">2</span>
           
           <code class="ruby">    self.head = node</code>
         </li>
@@ -448,8 +448,8 @@
           <code class="ruby">  def set_tail(data)</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="59">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="10" data-linenumber="59">
+          <span class="hits">10</span>
           
           <code class="ruby">    last_node(head).next_node = new_node(data)</code>
         </li>
@@ -689,8 +689,8 @@
           <code class="ruby">  def tail?</code>
         </li>
       
-        <li class="covered" data-hits="32" data-linenumber="11">
-          <span class="hits">32</span>
+        <li class="covered" data-hits="30" data-linenumber="11">
+          <span class="hits">30</span>
           
           <code class="ruby">    @next_node.nil?</code>
         </li>

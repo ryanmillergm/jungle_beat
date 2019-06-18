@@ -105,10 +105,10 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_prepend_appends_to_head
-    expected = 'bop, doop, deep'
-    @list.append('doop')
-    @list.append('deep')
-    @list.prepend('bop')
+    expected = 'dop, plop, suu'
+    @list.append('plop')
+    @list.append('suu')
+    @list.prepend('dop')
 
     result = @list.to_string
 
@@ -116,12 +116,12 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_insert
-    expected = 'doop, blop, deep, bop' 
-    @list.append('doop')
-    @list.append('deep')
-    @list.append('bop')
+    expected = "dop, woo, plop, suu"
+    @list.append('plop')
+    @list.append('suu')
+    @list.prepend('dop')
 
-    result = @list.insert(1, 'blop')
+    result = @list.insert(1, 'woo')
 
     assert_instance_of Node, result
     assert_equal expected, @list.to_string
