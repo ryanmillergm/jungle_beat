@@ -164,7 +164,7 @@ class LinkedListTest < MiniTest::Test
 
     assert_equal true, result
   end
-  
+
   def test_includes_returns_false_when_given_data_not_present
     @list.append('deep')
     @list.append('woo')
@@ -175,6 +175,23 @@ class LinkedListTest < MiniTest::Test
     result = @list.includes?('dep')
 
     assert_equal false, result
+  end
+
+  def test_pop
+    @list.append('deep')
+    @list.append('woo')
+    @list.append('shi')
+    @list.append('shu')
+    @list.append('blop')
+
+    result = @list.pop
+
+    assert_equal 'blop', result.data
+
+    result2 = @list.pop
+
+    assert_equal 'shu', result2.data
+    assert_equal 'deep, woo, shi', @list.to_string
   end
 
 end

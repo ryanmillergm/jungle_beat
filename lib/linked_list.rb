@@ -55,7 +55,14 @@ class LinkedList
   end
 
   def includes?(data)
-    find_by_data(head, data)
+    find_by_data(@head, data)
+  end
+
+  def pop
+    new_tail = node_at(@head, count - 2)
+    old_tail = new_tail.next_node
+    new_tail.next_node = nil
+    old_tail
   end
 
 
