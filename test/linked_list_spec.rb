@@ -129,7 +129,6 @@ class LinkedListTest < MiniTest::Test
 
   def test_find_from_middle
     expected = "shi"
-    @list = LinkedList.new
     @list.append('deep')
     @list.append('woo')
     @list.append('shi')
@@ -143,7 +142,6 @@ class LinkedListTest < MiniTest::Test
 
   def test_find_from_start
     expected = "woo, shi, shu"
-    @list = LinkedList.new
     @list.append('deep')
     @list.append('woo')
     @list.append('shi')
@@ -153,6 +151,30 @@ class LinkedListTest < MiniTest::Test
     result = @list.find(1, 3)
 
     assert_equal expected, result
+  end
+
+  def test_includes_returns_true_when_given_data_present
+    @list.append('deep')
+    @list.append('woo')
+    @list.append('shi')
+    @list.append('shu')
+    @list.append('blop')
+
+    result = @list.includes?('deep')
+
+    assert_equal true, result
+  end
+  
+  def test_includes_returns_false_when_given_data_not_present
+    @list.append('deep')
+    @list.append('woo')
+    @list.append('shi')
+    @list.append('shu')
+    @list.append('blop')
+
+    result = @list.includes?('dep')
+
+    assert_equal false, result
   end
 
 end

@@ -49,9 +49,13 @@ class LinkedList
   end
 
   def find(start, count)
-    node = node_at(head, start)
+    node = node_at(@head, start)
     return sentence_starter(node) if count == 1
     stringify_node(node.next_node, sentence_starter(node), count -= 1)
+  end
+
+  def includes?(data)
+    find_by_data(head, data)
   end
 
 
@@ -62,7 +66,7 @@ class LinkedList
   end
 
   def set_tail(data)
-    last_node(head).next_node = new_node(data)
+    last_node(@head).next_node = new_node(data)
   end
 
   def count_node(node, counter)
@@ -79,13 +83,19 @@ class LinkedList
     stringify_node(node.next_node, concat(sentence, node), terminal, counter += 1)
   end
 
-  def sentence_starter(node=head)
+  def sentence_starter(node = @head)
     "#{node.data}"
   end
 
   def node_at(node, position, counter=0)
     return node if position == counter
     node_at(node.next_node, position, counter += 1)
+  end
+
+  def find_by_data(node, data)
+    return true if node.data == data
+    return false if node.tail?
+    find_by_data(node.next_node, data)
   end
 
 end
