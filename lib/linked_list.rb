@@ -49,10 +49,9 @@ class LinkedList
   end
 
   def find(start, count)
-    found_node = node_at(@head, start)
-    sentence = sentence_starter(found_node)
-    return sentence if count == 1
-    stringify_node(found_node.next_node, sentence, count -= 1)
+    node = node_at(head, start)
+    return sentence_starter(node) if count == 1
+    stringify_node(node.next_node, sentence_starter(node), count -= 1)
   end
 
 
