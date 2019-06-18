@@ -39,6 +39,16 @@ class LinkedList
     self.head = node
   end
 
+  def insert(position, data)
+    node = new_node(data)
+    prior_node = node_at(head, position - 1)
+    next_node = node_at(head, position)
+    prior_node.next_node = node
+    node.next_node = next_node
+    return node
+  end
+
+
   private
 
   def set_head(data)
@@ -65,6 +75,11 @@ class LinkedList
 
   def sentence_starter
     "#{head.data}"
+  end
+
+  def node_at(node, position, counter=0)
+    return node if position == counter
+    node_at(node.next_node, position, counter += 1)
   end
 
 end

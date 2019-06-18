@@ -75,7 +75,6 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_append_three_nodes
-    @list = LinkedList.new
     @list.append('doop')
     @list.append('deep')
     @list.append('bop')
@@ -86,7 +85,6 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_count_three_nodes
-    @list = LinkedList.new
     @list.append('doop')
     @list.append('deep')
     @list.append('bop')
@@ -96,7 +94,6 @@ class LinkedListTest < MiniTest::Test
   end
 
   def test_to_string_works_with_three_nodes
-    @list = LinkedList.new
     @list.append('doop')
     @list.append('deep')
     @list.append('bop')
@@ -109,7 +106,6 @@ class LinkedListTest < MiniTest::Test
 
   def test_prepend_appends_to_head
     expected = 'bop, doop, deep'
-    @list = LinkedList.new
     @list.append('doop')
     @list.append('deep')
     @list.prepend('bop')
@@ -117,6 +113,18 @@ class LinkedListTest < MiniTest::Test
     result = @list.to_string
 
     assert_equal expected, result
+  end
+
+  def test_insert
+    expected = 'doop, blop, deep, bop' 
+    @list.append('doop')
+    @list.append('deep')
+    @list.append('bop')
+
+    result = @list.insert(1, 'blop')
+
+    assert_instance_of Node, result
+    assert_equal expected, @list.to_string
   end
 end
 
