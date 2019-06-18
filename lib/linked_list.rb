@@ -33,6 +33,12 @@ class LinkedList
     Node.new(data)
   end
 
+  def prepend(data)
+    node = new_node(data)
+    node.next_node = @head
+    self.head = node
+  end
+
   private
 
   def set_head(data)
