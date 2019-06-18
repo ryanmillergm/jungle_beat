@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.10.2/application.js' type='text/javascript'></script>    
     <link href='./assets/0.10.2/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.10.2/favicon_green.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.10.2/favicon_red.png" />
     <link rel="icon" type="image/png" href="./assets/0.10.2/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-06-18T13:00:47-06:00">2019-06-18T13:00:47-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-06-18T13:12:56-06:00">2019-06-18T13:12:56-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">100.0%</span></span>
+    (<span class="covered_percent"><span class="red">39.73%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="green">
-         9.71
+       <span class="red">
+         0.43
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>2</b> files in total.
-    <b>72</b> relevant lines. 
-    <span class="green"><b>72</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed </span>
+    <b>3</b> files in total.
+    <b>73</b> relevant lines. 
+    <span class="green"><b>29</b> lines covered</span> and
+    <span class="red"><b>44</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -51,23 +51,33 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#cd8b50881172c028b760bf05b9782e473a55a044" class="src_link" title="lib/linked_list.rb">lib/linked_list.rb</a></td>
+        <td class="strong"><a href="#754adb9c43577ef239ae224e145317e7e8ae1cb6" class="src_link" title="lib/jungle_beat.rb">lib/jungle_beat.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>3</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#cd8b50881172c028b760bf05b9782e473a55a044" class="src_link" title="lib/linked_list.rb">lib/linked_list.rb</a></td>
+        <td class="red strong">35.94 %</td>
         <td>108</td>
         <td>64</td>
-        <td>64</td>
-        <td>0</td>
-        <td>7.7</td>
+        <td>23</td>
+        <td>41</td>
+        <td>0.4</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#4795f97394884e796cfa4099568a8564dc83c003" class="src_link" title="lib/node.rb">lib/node.rb</a></td>
-        <td class="green strong">100.0 %</td>
+        <td class="red strong">62.5 %</td>
         <td>20</td>
         <td>8</td>
-        <td>8</td>
-        <td>0</td>
-        <td>25.8</td>
+        <td>5</td>
+        <td>3</td>
+        <td>0.6</td>
       </tr>
       
     </tbody>
@@ -86,14 +96,51 @@
     
       <div class="source_files">
       
+        <div class="source_table" id="754adb9c43577ef239ae224e145317e7e8ae1cb6">
+  <div class="header">
+    <h3>lib/jungle_beat.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>1</b> relevant lines. 
+      <span class="green"><b>1</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class JungleBeat</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="cd8b50881172c028b760bf05b9782e473a55a044">
   <div class="header">
     <h3>lib/linked_list.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">35.94 %</span> covered</h4>
     <div>
       <b>64</b> relevant lines. 
-      <span class="green"><b>64</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <span class="green"><b>23</b> lines covered</span> and
+      <span class="red"><b>41</b> lines missed.</span>
     </div>
   </div>
   
@@ -124,8 +171,8 @@
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="5">
-          <span class="hits">21</span>
+        <li class="missed" data-hits="0" data-linenumber="5">
+          
           
           <code class="ruby">    @head = nil</code>
         </li>
@@ -148,8 +195,8 @@
           <code class="ruby">  def append(data)</code>
         </li>
       
-        <li class="covered" data-hits="47" data-linenumber="9">
-          <span class="hits">47</span>
+        <li class="missed" data-hits="0" data-linenumber="9">
+          
           
           <code class="ruby">    empty? ? set_head(data) : set_tail(data)</code>
         </li>
@@ -172,14 +219,14 @@
           <code class="ruby">  def count</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="13">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
           
           <code class="ruby">    return 0 if empty?</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="14">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
           
           <code class="ruby">    count_node(@head, 1)</code>
         </li>
@@ -202,20 +249,20 @@
           <code class="ruby">  def to_string</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="18">
-          <span class="hits">5</span>
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
           
           <code class="ruby">    return &quot;&quot; if empty?</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="19">
-          <span class="hits">5</span>
+        <li class="missed" data-hits="0" data-linenumber="19">
+          
           
           <code class="ruby">    return sentence_starter if @head.tail?</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="20">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="20">
+          
           
           <code class="ruby">    stringify_node(@head.next_node, sentence_starter)</code>
         </li>
@@ -238,14 +285,14 @@
           <code class="ruby">  def last_node(note)</code>
         </li>
       
-        <li class="covered" data-hits="65" data-linenumber="24">
-          <span class="hits">65</span>
+        <li class="missed" data-hits="0" data-linenumber="24">
+          
           
           <code class="ruby">    return note if note.tail?</code>
         </li>
       
-        <li class="covered" data-hits="34" data-linenumber="25">
-          <span class="hits">34</span>
+        <li class="missed" data-hits="0" data-linenumber="25">
+          
           
           <code class="ruby">    last_node(note.next_node)</code>
         </li>
@@ -268,8 +315,8 @@
           <code class="ruby">  def empty?</code>
         </li>
       
-        <li class="covered" data-hits="58" data-linenumber="29">
-          <span class="hits">58</span>
+        <li class="missed" data-hits="0" data-linenumber="29">
+          
           
           <code class="ruby">    @head.nil?</code>
         </li>
@@ -292,8 +339,8 @@
           <code class="ruby">  def new_node(data)</code>
         </li>
       
-        <li class="covered" data-hits="51" data-linenumber="33">
-          <span class="hits">51</span>
+        <li class="missed" data-hits="0" data-linenumber="33">
+          
           
           <code class="ruby">    Node.new(data)</code>
         </li>
@@ -316,20 +363,20 @@
           <code class="ruby">  def prepend(data)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="37">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="37">
+          
           
           <code class="ruby">    node = new_node(data)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="38">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="38">
+          
           
           <code class="ruby">    node.next_node = @head</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="39">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="39">
+          
           
           <code class="ruby">    self.head = node</code>
         </li>
@@ -352,38 +399,38 @@
           <code class="ruby">  def insert(position, data)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="43">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="43">
+          
           
           <code class="ruby">    node = new_node(data)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="44">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="44">
+          
           
           <code class="ruby">    prior_node = node_at(@head, position - 1)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="45">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="45">
+          
           
           <code class="ruby">    next_node = node_at(@head, position)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="46">
+          
           
           <code class="ruby">    prior_node.next_node = node</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="47">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="47">
+          
           
           <code class="ruby">    node.next_node = next_node</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="48">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="48">
+          
           
           <code class="ruby">    return node</code>
         </li>
@@ -406,20 +453,20 @@
           <code class="ruby">  def find(start, count)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="52">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="52">
+          
           
           <code class="ruby">    node = node_at(@head, start)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="53">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="53">
+          
           
           <code class="ruby">    return sentence_starter(node) if count == 1</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="54">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="54">
+          
           
           <code class="ruby">    stringify_node(node.next_node, sentence_starter(node), count -= 1)</code>
         </li>
@@ -442,8 +489,8 @@
           <code class="ruby">  def includes?(data)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="58">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="58">
+          
           
           <code class="ruby">    find_by_data(@head, data)</code>
         </li>
@@ -466,26 +513,26 @@
           <code class="ruby">  def pop</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="62">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="62">
+          
           
           <code class="ruby">    new_tail = node_at(@head, count - 2)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="63">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="63">
+          
           
           <code class="ruby">    old_tail = new_tail.next_node</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="64">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="64">
+          
           
           <code class="ruby">    new_tail.next_node = nil</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="65">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="65">
+          
           
           <code class="ruby">    old_tail</code>
         </li>
@@ -526,8 +573,8 @@
           <code class="ruby">  def set_head(data)</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="72">
-          <span class="hits">17</span>
+        <li class="missed" data-hits="0" data-linenumber="72">
+          
           
           <code class="ruby">    self.head = new_node(data)</code>
         </li>
@@ -550,8 +597,8 @@
           <code class="ruby">  def set_tail(data)</code>
         </li>
       
-        <li class="covered" data-hits="30" data-linenumber="76">
-          <span class="hits">30</span>
+        <li class="missed" data-hits="0" data-linenumber="76">
+          
           
           <code class="ruby">    last_node(@head).next_node = new_node(data)</code>
         </li>
@@ -574,14 +621,14 @@
           <code class="ruby">  def count_node(node, counter)</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="80">
-          <span class="hits">13</span>
+        <li class="missed" data-hits="0" data-linenumber="80">
+          
           
           <code class="ruby">    return counter if node.tail?</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="81">
-          <span class="hits">9</span>
+        <li class="missed" data-hits="0" data-linenumber="81">
+          
           
           <code class="ruby">    count_node(node.next_node, counter += 1)</code>
         </li>
@@ -604,8 +651,8 @@
           <code class="ruby">  def concat(sentence, node)</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="85">
-          <span class="hits">11</span>
+        <li class="missed" data-hits="0" data-linenumber="85">
+          
           
           <code class="ruby">    &quot;#{sentence}, #{node.data}&quot;</code>
         </li>
@@ -628,14 +675,14 @@
           <code class="ruby">  def stringify_node(node, sentence, terminal = nil, counter = 1)</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="89">
-          <span class="hits">11</span>
+        <li class="missed" data-hits="0" data-linenumber="89">
+          
           
           <code class="ruby">    return concat(sentence, node) if node.tail? || terminal == counter</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="90">
-          <span class="hits">6</span>
+        <li class="missed" data-hits="0" data-linenumber="90">
+          
           
           <code class="ruby">    stringify_node(node.next_node, concat(sentence, node), terminal, counter += 1)</code>
         </li>
@@ -658,8 +705,8 @@
           <code class="ruby">  def sentence_starter(node = @head)</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="94">
-          <span class="hits">7</span>
+        <li class="missed" data-hits="0" data-linenumber="94">
+          
           
           <code class="ruby">    &quot;#{node.data}&quot;</code>
         </li>
@@ -682,14 +729,14 @@
           <code class="ruby">  def node_at(node, position, counter=0)</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="98">
-          <span class="hits">15</span>
+        <li class="missed" data-hits="0" data-linenumber="98">
+          
           
           <code class="ruby">    return node if position == counter</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="99">
-          <span class="hits">9</span>
+        <li class="missed" data-hits="0" data-linenumber="99">
+          
           
           <code class="ruby">    node_at(node.next_node, position, counter += 1)</code>
         </li>
@@ -712,20 +759,20 @@
           <code class="ruby">  def find_by_data(node, data)</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="103">
-          <span class="hits">6</span>
+        <li class="missed" data-hits="0" data-linenumber="103">
+          
           
           <code class="ruby">    return true if node.data == data</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="104">
-          <span class="hits">5</span>
+        <li class="missed" data-hits="0" data-linenumber="104">
+          
           
           <code class="ruby">    return false if node.tail?</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="105">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="105">
+          
           
           <code class="ruby">    find_by_data(node.next_node, data)</code>
         </li>
@@ -756,11 +803,11 @@
         <div class="source_table" id="4795f97394884e796cfa4099568a8564dc83c003">
   <div class="header">
     <h3>lib/node.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">62.5 %</span> covered</h4>
     <div>
       <b>8</b> relevant lines. 
-      <span class="green"><b>8</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <span class="green"><b>5</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
   
@@ -797,14 +844,14 @@
           <code class="ruby">  def initialize(data, next_node = nil)</code>
         </li>
       
-        <li class="covered" data-hits="51" data-linenumber="6">
-          <span class="hits">51</span>
+        <li class="missed" data-hits="0" data-linenumber="6">
+          
           
           <code class="ruby">    @data = data</code>
         </li>
       
-        <li class="covered" data-hits="51" data-linenumber="7">
-          <span class="hits">51</span>
+        <li class="missed" data-hits="0" data-linenumber="7">
+          
           
           <code class="ruby">    @next_node = next_node</code>
         </li>
@@ -827,8 +874,8 @@
           <code class="ruby">  def tail?</code>
         </li>
       
-        <li class="covered" data-hits="99" data-linenumber="11">
-          <span class="hits">99</span>
+        <li class="missed" data-hits="0" data-linenumber="11">
+          
           
           <code class="ruby">    @next_node.nil?</code>
         </li>
