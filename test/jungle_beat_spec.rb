@@ -1,6 +1,16 @@
 require './test/test_helper'
 
 class JungleBeatTest < MiniTest::Test
+
+  def setup
+    @jb = JungleBeat.new
+  end
+
+  def test_jungle_beat_exists
+    assert_instance_of JungleBeat, @jb
+  end
+
+  
 end
 
 # > require "./lib/jungle_beat"
