@@ -126,23 +126,89 @@ class LinkedListTest < MiniTest::Test
     assert_instance_of Node, result
     assert_equal expected, @list.to_string
   end
+
+  def test_find_from_middle
+    expected = "shi"
+    @list.append('deep')
+    @list.append('woo')
+    @list.append('shi')
+    @list.append('shu')
+    @list.append('blop')
+
+    result = @list.find(2, 1)
+
+    assert_equal expected, result
+  end
+
+  def test_find_from_start
+    expected = "woo, shi, shu"
+    @list.append('deep')
+    @list.append('woo')
+    @list.append('shi')
+    @list.append('shu')
+    @list.append('blop')
+
+    result = @list.find(1, 3)
+
+    assert_equal expected, result
+  end
+
+  def test_includes_returns_true_when_given_data_present
+    @list.append('deep')
+    @list.append('woo')
+    @list.append('shi')
+    @list.append('shu')
+    @list.append('blop')
+
+    result = @list.includes?('deep')
+
+    assert_equal true, result
+  end
+
+  def test_includes_returns_false_when_given_data_not_present
+    @list.append('deep')
+    @list.append('woo')
+    @list.append('shi')
+    @list.append('shu')
+    @list.append('blop')
+
+    result = @list.includes?('dep')
+
+    assert_equal false, result
+  end
+
+  def test_pop
+    @list.append('deep')
+    @list.append('woo')
+    @list.append('shi')
+    @list.append('shu')
+    @list.append('blop')
+
+    result = @list.pop
+
+    assert_equal 'blop', result.data
+
+    result2 = @list.pop
+
+    assert_equal 'shu', result2.data
+    assert_equal 'deep, woo, shi', @list.to_string
+  end
+
 end
 
-# > require "./lib/linked_list"
-# > list = LinkedList.new
-# > list.append("plop")
-# => "plop"
 # > list.to_string
-# => "plop"
-# > list.append("suu")
-# => "suu"
-# > list.prepend("dop")
-# => "dop"
+# => "deep woo shi shu blop"
+# > list.find(2, 1)
+# => "shi"
+# > list.find(1, 3)
+# => "woo shi shu"
+# > list.includes?("deep")
+# => true
+# > list.includes?("dep")
+# => false
+# > list.pop
+# => "blop"
+# > list.pop
+# => "shu"
 # > list.to_string
-# => "dop plop suu"
-# > list.count
-# => 3
-# > list.insert(1, "woo")
-# => "woo"
-# list.to_string
-# => "dop woo plop suu"
+# => "deep woo shi"

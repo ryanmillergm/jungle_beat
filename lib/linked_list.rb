@@ -41,11 +41,28 @@ class LinkedList
 
   def insert(position, data)
     node = new_node(data)
-    prior_node = node_at(head, position - 1)
-    next_node = node_at(head, position)
+    prior_node = node_at(@head, position - 1)
+    next_node = node_at(@head, position)
     prior_node.next_node = node
     node.next_node = next_node
     return node
+  end
+
+  def find(start, count)
+    node = node_at(@head, start)
+    return sentence_starter(node) if count == 1
+    stringify_node(node.next_node, sentence_starter(node), count -= 1)
+  end
+
+  def includes?(data)
+    find_by_data(@head, data)
+  end
+
+  def pop
+    new_tail = node_at(@head, count - 2)
+    old_tail = new_tail.next_node
+    new_tail.next_node = nil
+    old_tail
   end
 
 
@@ -56,7 +73,7 @@ class LinkedList
   end
 
   def set_tail(data)
-    last_node(head).next_node = new_node(data)
+    last_node(@head).next_node = new_node(data)
   end
 
   def count_node(node, counter)
@@ -68,18 +85,24 @@ class LinkedList
     "#{sentence}, #{node.data}"
   end
 
-  def stringify_node(node, sentence)
-    return concat(sentence, node) if node.tail?
-    stringify_node(node.next_node, concat(sentence, node))
+  def stringify_node(node, sentence, terminal = nil, counter = 1)
+    return concat(sentence, node) if node.tail? || terminal == counter
+    stringify_node(node.next_node, concat(sentence, node), terminal, counter += 1)
   end
 
-  def sentence_starter
-    "#{head.data}"
+  def sentence_starter(node = @head)
+    "#{node.data}"
   end
 
   def node_at(node, position, counter=0)
     return node if position == counter
     node_at(node.next_node, position, counter += 1)
+  end
+
+  def find_by_data(node, data)
+    return true if node.data == data
+    return false if node.tail?
+    find_by_data(node.next_node, data)
   end
 
 end
